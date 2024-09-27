@@ -1,0 +1,25 @@
+{
+  "description": "Enhanced file upload field for forms build with Neos.Fusion.Form",
+  "type": "neos-package",
+  "name": "networkteam/fusionform-fileupload",
+  "authors": [
+    {
+      "name": "networkteam GmbH",
+      "homepage": "https://networkteam.com"
+    }
+  ],
+  "require": {
+    "neos/fusion-form": "~2.1",
+    "neos/neos": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Networkteam\\FusionForm\\FileUpload\\": "Classes/"
+    }
+  },
+  "extra": {
+    "neos": {
+      "package-key": "Networkteam.FusionForm.FileUpload"
+    }
+  }
+}
