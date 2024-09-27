@@ -1,0 +1,7 @@
+prototype(Networkteam.FusionForm.FileUpload:FieldContainer) < prototype(Neos.Fusion.Form:FieldContainer) {
+
+    attributes {
+        // FIXME: use correct data attributes
+        data-component = 'file'
+    }
+}
