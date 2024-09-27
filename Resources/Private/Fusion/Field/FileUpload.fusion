@@ -1,8 +1,21 @@
 prototype(Networkteam.FusionForm.FileUpload:Field.FileUpload) < prototype(Neos.Fusion.Form:Component.Field) {
 
+    @propTypes {
+        uploadedFiles = ${PropTypes.dataStructure({})}
+    }
+
     attributes.type = 'file'
+    uploadedFiles = ${field.isMultiple() ? field.getCurrentValue() : [field.getCurrentValue()]}
 
     renderer = afx`
+        <Neos.Fusion:Loop items={props.uploadedFiles} itemName="item" @if={props.uploadedFiles}>
+            <input
+                type="hidden" name={field.getName() + '[originallySubmittedResource][__identity]'}
+                value={item.persistenceObjectIdentifier}
+            />
+        </Neos.Fusion:Loop>
+
+
         <input
             multiple={field.isMultiple()}
             name={field.getName()}
