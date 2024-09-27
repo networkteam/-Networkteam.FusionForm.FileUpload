@@ -1,0 +1,12 @@
+prototype(Networkteam.FusionForm.FileUpload:Field.FileUpload) < prototype(Neos.Fusion.Form:Component.Field) {
+
+    attributes.type = 'file'
+
+    renderer = afx`
+        <input
+            multiple={field.isMultiple()}
+            name={field.getName()}
+            {...props.attributes}
+        />
+    `
+}
